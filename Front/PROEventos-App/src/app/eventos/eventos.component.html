@@ -1,5 +1,6 @@
-<h1>Eventos de Components!</h1>
-
+<h2>Eventos</h2>
+<hr>
+<!--
 <div *ngFor="let evento of eventos">
   <p>
     <b>Tema:</b> {{evento.tema}}
@@ -8,4 +9,76 @@
     <b>Local:</b> {{evento.local}}
   </p>
   <hr>
+</div> -->
+
+<div class="row mb-2">
+  <div class="col">
+    <input type="text" class="form-control mr-2" (ngModelChange)="buscaChange($event)" [(ngModel)]="filtroBuscar" placeholder="Buscar">
+  </div>
 </div>
+<!--
+<div class="container">
+  <div class="row">
+        <div class="col-md-8">
+              <form class="form-inline" action="#">
+                  Search<input type="text" id="search" name="search" class="input-small" placeholder="Search...">
+                  <select id="searchon" name="searchon">
+                      <option value="0">First Name</option>
+                      <option value="1">Last Name</option>
+                  </select>
+                  <button type="submit" class="btn">Search</button>
+              </form>
+        </div>
+  </div>
+</div>
+
+<form class="form-inline" action="/action_page.php">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form> -->
+
+<!-- <form action="" class="form-inline">
+  <div class="form-group mb-2">
+    <input type="text" class="form-control mr-2" placeholder="Buscar">
+    <button class="btn btn-outline-success mt-2">Buscar</button>
+  </div>
+</form> -->
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Tema</th>
+      <th>Local</th>
+      <th>Data</th>
+      <th>Qtd Pessoas</th>
+      <th>Lote</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let evento of eventosFiltrados">
+     <td>{{evento.eventoId}}</td>
+     <td>{{evento.imagemURL}}</td>
+     <td>{{evento.tema}}</td>
+     <td>{{evento.local}}</td>
+     <td>{{evento.dataEvento}}</td>
+     <td>{{evento.qtdPessoas}}</td>
+     <td>{{evento.lote}}</td>
+     <td>
+       <button type="button" class="btn btn-primary btn-sm">Editar</button>
+       <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+     </td>
+   </tr>
+  </tbody>
+</table>
